@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="profile-card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=My+Soul&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 class="sr-only">Profile card for Izzie Bush, frontend developer</h2>
+    <article data-testid="test-profile-card" id="profile-card">
+        <div class="profile-header">
+            <figure>
+                <img data-testid="test-user-avatar" src="Nayrin.jpeg" alt="Avatar of Izzie Bush" class="avatar">
+                <figcaption class="sr-only">Avatar of Izzie Bush</figcaption>
+            </figure>
+            <header>
+                <h2 data-testid="test-user-name">Izzie Bush</h2>
+                <p class="role">Frontend Developer &amp; UI Designer</p>
+            </header>
+            
+        </div>
+
+        <div class="card-body">
+            <p data-testid="test-user-bio">
+                I am a passionate frontend developer with a love for creating beautiful and functional user interfaces. I have a strong background in HTML and CSS, and a growing foundation in JavaScript. I'm yet to have knowledge or experience with popular frameworks like React and Vue.js. My career is just beginning, but I am eager to learn and grow in the field of frontend development.
+            </p>
+
+            <div class="time-block" role="status" aria-live="polite" aria-label="Current epoch time in milliseconds ">
+                <span class="time-label">Current Time ms:</span>
+                <time id="current-time" data-testid="test-user-time"></time>
+            </div>
+            
+            
+            <nav data-testid="test-user-social-links" aria-label="Social media links">
+                <p class="social-label">Connect with me:</p>
+                <ul class="social-list" aria-labelledby="social-label">
+                    <li>
+                        <a href="https://x.com/izzie_bush?s=21" data-testid="test-social-link-twitter" target="_blank" rel="noopener noreferrer" aria-label="Izzie on Twitter"><i aria-hidden="true" id="social-icon" class="fab fa-twitter"></i></a></li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/wisdom-o-20a890314?utm_source=share_via&utm_content=profile&utm_medium=member_ios" data-testid="test-social-link-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Izzie on LinkedIn"><i aria-hidden="true" id="social-icon" class="fab fa-linkedin"></i></a></li>
+
+                    <li>
+                        <a href="https://github.com/Izziebush3" data-testid="test-social-link-github" target="_blank" rel="noopener noreferrer" aria-label="Izzie on GitHub"><i aria-hidden="true" id="social-icon" class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+
+          
+
+            <div class="lists-grid">
+                <section id="hobbies-section"  aria-label="User hobbies">
+                    <h3>Hobbies</h3>
+                    <ul data-testid="test-user-hobbies">
+                        <li><span class="hobby-icon" aria-hidden="true">+</span>Calm colours</li>
+                        <li><span class="hobby-icon" aria-hidden="true">+</span>History</li>
+                        <li><span class="hobby-icon" aria-hidden="true">+</span>Music</li>
+                    </ul>
+                </section>
+
+                <section id="dislikes-section" aria-label="User-dislikes" >
+                    <h3>Dislikes</h3>
+                    <ul data-testid="test-user-dislikes">
+                        <li><span class="dislike-icon" aria-hidden="true">-</span>Spam</li>
+                        <li><span class="dislike-icon" aria-hidden="true">-</span>Unresponsive support</li>
+                        <li><span class="dislike-icon" aria-hidden="true">-</span>Poor user experience</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+            
+        
+    </article>
+
+    <script src="script.js"></script>
+</body>
+</html>

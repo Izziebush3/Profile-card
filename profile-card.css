@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #E5F2F2;
+    --text-color: #000B0B;
+    --accent-color: #43C7EC;
+    --accent-color-2: #4B7DE2;
+    --border: #858888;
+}
+
+body {
+    font-family: Noto Serif, serif;
+    background-color: #A1A1A1;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+article {
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 2.5rem;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    position: relative;
+    padding: 2rem 1.5rem 1rem;
+    background: var(--accent-color-2);
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border);
+    color: var(--background);
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+figcaption {
+    display: none;
+}
+
+header {
+    margin-top: 0.5rem;
+}
+
+h2 {
+    font-family: Cormorant, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.role {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin-top: 0.25rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+[data-testid="test-user-bio"] {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--border);
+    margin-bottom: 1.3rem;
+}
+
+.time-block {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background-color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.time-label {
+    color: var(--accent-color-2);
+    letter-spacing: 0.07em;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+[data-testid="test-user-time"] {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+[data-testid="test-user-social-links"] {
+    margin-bottom: 1.25rem;
+}
+
+.social-label {
+    font-size: 0.9rem;
+    color: var(--accent-color-2);
+    letter-spacing: 0.07em;
+    margin-bottom: 0.5rem;
+}
+
+.social-list {
+    list-style: none;
+    text-decoration: none;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.social-list a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-list a:hover {
+    color: var(--accent-color-2);
+    transform: scale(0.97);
+}
+
+.social-list a:focus {
+    outline: 2px solid var(--accent-color-2);
+    outline-offset: 2px;
+}
+
+.social-list a:focus-visible {
+    outline: 2px solid var(--accent-color-2);
+    outline-offset: 2px;
+}
+
+.lists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+#hobbies-section,
+#dislikes-section {
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--border);
+}
+
+[data-testid="test-user-dislikes"],
+[data-testid="test-user-hobbies"] {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+[data-testid="test-user-dislikes"] li,
+[data-testid="test-user-hobbies"] li {
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+    border-bottom: 0.25rem solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+[data-testid="test-user-dislikes"] li:last-child,
+[data-testid="test-user-hobbies"] li:last-child {
+    border-bottom: none;
+}
+
+.dislike-icon {
+    color: #E74C3C;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.hobby-icon {
+    color: #2ECC71;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 500px) {
+    .lists-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
